@@ -1,0 +1,6 @@
+train: dataset/images
+val: dataset/images
+
+nc: 3
+
+names: ['car', 'bike', 'truck']

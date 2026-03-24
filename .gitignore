@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+venv/
+.env/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Dataset
+dataset/images/
+dataset/labels/
+annotations
+JPEGImages
+
+# YOLO outputs
+runs/
+*.pt
+
+# Logs
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# VS Code
+.vscode/
