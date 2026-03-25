@@ -50,7 +50,7 @@ st.markdown("""
 <span style='color:#ff4b4b; font-size:18px; font-weight:600;'>Sentinel.v8</span> is a custom-trained object detection system built using YOLOv8.
 It can detect and classify common road vehicles in real-world scenarios.
 
-It is primarily trained on the IDD dataset (urban traffic scenes from Bengaluru) along with a mix of custom-collected data from Bhilai, helping it adapt to diverse real-world road conditions.
+It is primarily trained on the IDD dataset along with a mix of custom-collected data from Bhilai, helping it adapt to diverse real-world road conditions.
 """, unsafe_allow_html=True)
 
 
@@ -70,7 +70,7 @@ def add_watermark(image):
     overlay = image.copy()
     cv2.putText(
         overlay,
-        "Sentinel.v8",
+        "PrateekSaha | Sentinel.v8",
         (10, image.shape[0] - 10),
         cv2.FONT_HERSHEY_SIMPLEX,
         0.6,
@@ -125,7 +125,7 @@ elif option == "Video":
             st.success("Processing done! Check output folder")
 
 st.markdown(
-    "<div style='text-align: center; font-size:12px; color: gray;'>Prateek Saha | Sentinel.v8</div>",
+    "<div style='text-align: center; font-size:12px; color: gray;'>PrateekSaha | Sentinel.v8©2026</div>",
     unsafe_allow_html=True
 )
 st.sidebar.markdown("### Sentinel.v8 | PrateekSaha©2026")
