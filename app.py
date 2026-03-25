@@ -35,8 +35,6 @@ st.markdown(f"""
 """, unsafe_allow_html=True)
 
 
-
-
 # col1,col2 = st.columns([1,8])
 
 # with col1:
@@ -45,6 +43,7 @@ st.markdown(f"""
 
 # with col2:
 #     st.title("Sentinel.v8")
+
 
 st.markdown("""
 <span style='color:#ff4b4b; font-size:18px; font-weight:600;'>Sentinel.v8</span> is a custom-trained object detection system built using YOLOv8.
@@ -60,6 +59,7 @@ It is primarily trained on the IDD dataset along with a mix of custom-collected 
 # """, unsafe_allow_html=True)  
 # It can detect and classify common road vehicles in real-world scenarios.
 # """)
+
 
 # Load model
 model = YOLO("models/v2_979data.pt")
@@ -124,10 +124,13 @@ elif option == "Video":
 
             st.success("Processing done! Check output folder")
 
+
 st.markdown(
     "<div style='text-align: center; font-size:12px; color: gray;'>PrateekSaha | Sentinel.v8©2026</div>",
     unsafe_allow_html=True
 )
+
+# instructions
 st.sidebar.markdown("### Sentinel.v8 | PrateekSaha©2026")
 st.sidebar.markdown("""
 ## Some general Instruction about the model 
