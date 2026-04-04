@@ -1,9 +1,9 @@
 # ABOUT SENTINEL.v8
-The goal Sentinel.v8 is to design and implement a reliable and efficient vehicle detection system capable of identifying and classifying multiple types of vehicles in real-world traffic scenarios. The system is built using a deep learning–based object detection model and aims to perform accurately across diverse viewpoints, including front, rear, and side perspectives.
+The Objective of Sentinel.v8 is to design and implement a reliable and efficient vehicle detection system capable of identifying and classifying multiple types of vehicles in real-world traffic scenarios. The system is built using a deep learning–based object detection model and aims to perform accurately across diverse viewpoints, including front, rear, and side perspectives.
 
 A key goal of this project is to leverage a combination of publicly available datasets and custom-collected data to improve generalization and robustness. By incorporating varied environmental conditions, camera angles, and traffic densities, the model is trained to handle practical challenges such as occlusion, overlapping objects, and inconsistent object scales.
 
-![UI](assets/Screenshot 2026-04-05 024357.png)
+![UI](assets/Screenshot.png)
 
 Another important objective is to create an end-to-end pipeline that not only focuses on model training but also includes data preprocessing, annotation conversion, dataset management, and deployment through a user-friendly interface. This ensures that the system is not limited to theoretical performance but is also usable in real-world applications.
 
@@ -212,7 +212,6 @@ The performance of Sentinel.v8 improved progressively across three training phas
 
 ## Results & Observations
 ### Final Training Outputs
-
 The following images represent the final outputs generated after training the model. These include validation results, confusion matrix, and prediction samples, which provide a visual understanding of model performance.
 
 ![Validation Batch](runs/detect/train/val_batch0_pred.jpg)
@@ -226,6 +225,8 @@ These outputs show how the model performs across different scenarios and classes
 * Truck detection is comparatively weaker and depends heavily on visibility and size in the frame.
 
 The results graph illustrates the training progression, including loss reduction and improvement in evaluation metrics over epochs. Overall, the outputs confirm that the model has learned meaningful patterns from the dataset while still leaving room for improvement in edge cases.
+
+![Example](assets/Streamlit.pdf)
 
 
 ## Limitations
