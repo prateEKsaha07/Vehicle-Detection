@@ -16,8 +16,9 @@ annotations
 JPEGImages
 
 # YOLO outputs
-runs/
+# runs/
 *.pt
+runs/detect/train/weights
 
 # Logs
 *.log

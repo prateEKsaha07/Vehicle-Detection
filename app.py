@@ -104,7 +104,7 @@ elif option == "Video":
     uploaded_file = st.file_uploader("Upload a video", type=["mp4"])
 
     if uploaded_file is not None:
-        file_path = os.path.join("input", uploaded_file.name)
+        file_path = os.path.join("inputs", uploaded_file.name)
 
         with open(file_path, "wb") as f:
             f.write(uploaded_file.read())
