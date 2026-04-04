@@ -3,6 +3,8 @@ The goal Sentinel.v8 is to design and implement a reliable and efficient vehicle
 
 A key goal of this project is to leverage a combination of publicly available datasets and custom-collected data to improve generalization and robustness. By incorporating varied environmental conditions, camera angles, and traffic densities, the model is trained to handle practical challenges such as occlusion, overlapping objects, and inconsistent object scales.
 
+![UI](assets/Screenshot 2026-04-05 024357.png)
+
 Another important objective is to create an end-to-end pipeline that not only focuses on model training but also includes data preprocessing, annotation conversion, dataset management, and deployment through a user-friendly interface. This ensures that the system is not limited to theoretical performance but is also usable in real-world applications.
 
 The project also aims to optimize performance under hardware constraints, particularly CPU-based environments, by balancing accuracy and computational efficiency. This includes careful selection of model architecture, training parameters, and inference optimizations to ensure practical usability without requiring high-end hardware.
@@ -17,13 +19,78 @@ Raw Data → XML Annotations → Conversion → YOLO Labels → Sync → Dataset
 The data flow in Sentinel.v8 represents the complete pipeline from raw dataset preparation to model training and local inference using the Streamlit interface.
 
 ## Data Preparation Flow
-image-1
+```plaintext
+Raw Dataset (IDD folders + Custom Data)
+        │
+        ▼
+XML Annotations (multiple folders like frontFar, rearNear, etc.)
+        │
+        ▼
+Manual Selection / Folder-wise Processing
+        │
+        ▼
+Conversion Script (XML → YOLO Format)
+        │
+        ▼
+Class Filtering (car, bike, truck)
+        │
+        ▼
+Generated YOLO Labels (.txt)
+        │
+        ▼
+Image-Label Synchronization Script
+        │
+        ▼
+Final Dataset (dataset/images + dataset/labels)
+```
 
 ## Training Data Flow
-image-2
-
+```plaintext
+Final Dataset (images + labels)
+        │
+        ▼
+YOLOv8 Data Loader
+        │
+        ▼
+Batch Processing
+        │
+        ▼
+Model Training (Pretrained → Fine-tuned)
+        │
+        ▼
+Loss Calculation (Box + Class + DFL)
+        │
+        ▼
+Backpropagation
+        │
+        ▼
+Updated Model Weights
+        │
+        ▼
+Saved Model (best.pt)
+```
 ## Inference Data Flow
-image-3
+```plaintext
+User Input (Image / Video)
+        │
+        ▼
+File Upload (Streamlit)
+        │
+        ▼
+Saved to Local Input Folder
+        │
+        ▼
+YOLOv8 Model Inference
+        │
+        ▼
+Detection Output (Bounding Boxes + Classes)
+        │
+        ▼
+Saved Output (runs/detect/)
+        │
+        ▼
+Displayed in Streamlit UI
+```
 
 # Dataset Details
 The dataset used in Sentinel.v8 is a combination of selected portions of the Indian Driving Dataset (IDD) and additional custom-collected data. The IDD dataset provides diverse real-world traffic scenarios, primarily from urban environments, with a significant portion originating from Bangalore. To improve relevance and adaptability, custom data was also incorporated, captured in Bhilai, introducing variation in road conditions and perspectives.
@@ -36,8 +103,8 @@ After cleaning and filtering, the final training dataset contains approximately 
 
 Overall, the dataset preparation process emphasizes quality over quantity, ensuring that the model is trained on consistent and relevant data while handling the limitations of incomplete or noisy annotations.
 
-## training samples
-images-2 or 3
+## Training Batch Samples
+![train Batch3](runs/detect/train/train_batch2822.jpg)
 
 # Classes detected
 The Sentinel.v8 model is trained to detect a limited set of vehicle classes to ensure focused learning and improved accuracy. During the dataset preparation phase, multiple object categories present in the original annotations were filtered, and only relevant vehicle types were retained.
